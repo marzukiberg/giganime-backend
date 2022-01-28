@@ -17,7 +17,7 @@ const dataServer3 = async (path) => {
                   "/anime" +
                   $(this).find(".thumb a").attr("href").replace(server3, "/"),
                 title: $(this).find("h2.entry-title").text(),
-                img: $(this).find(".thumb img").attr("src"),
+                img: $(this).find(".thumb img").attr("src").split("?")[0],
                 eps: $(this)
                   .find(".dtla span")
                   .map(function () {

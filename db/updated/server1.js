@@ -12,8 +12,12 @@ const dataServer1 = async (path) => {
         return {
           path: "/anime/" + link[link.length - 2] + "/",
           title: $(this).find(".dataver2 .title").text(),
-          img: $(this).find("img").attr("src"),
-          eps: $(this).find(".data .episode").text(),
+          img: $(this).find("img").attr("src").split("?")[0],
+          eps: $(this)
+            .find(".data .episode")
+            .text()
+            .replace("Episode", "")
+            .trim(),
         };
       })
       .get();
