@@ -1,10 +1,10 @@
 const cheerio = require("cheerio");
 const cloudscraper = require("cloudscraper");
-const { server1 } = require("../utils/constants");
+const { server1 } = require("../../utils/constants");
 
-const getUpdated = async () => {
+const dataServer1 = async (path) => {
   try {
-    const html = await cloudscraper.get(server1 + "anime-terbaru/");
+    const html = await cloudscraper.get(server1 + "anime-terbaru/" + path);
     const $ = cheerio.load(html);
     const data = $(".animepost")
       .map(function () {
@@ -54,4 +54,4 @@ const getUpdated = async () => {
   }
 };
 
-module.exports = getUpdated;
+module.exports = dataServer1;
