@@ -32,7 +32,7 @@ const dataServer1 = async (sq, page) => {
             .not(".arrow_pag")
             .map(function () {
               return {
-                link: $(this).attr("href")?.match(/\d/g)?.join(""),
+                link: $(this).attr("href"),
                 text: $(this).text(),
               };
             })
