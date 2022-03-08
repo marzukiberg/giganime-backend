@@ -19,7 +19,7 @@ const dataServer2 = async (slug) => {
           iframeSrc: $(this).find("iframe").attr("src"),
         };
       })
-      .get();
+      .get(0);
 
     return {
       source: server2,
